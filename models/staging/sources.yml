@@ -48,7 +48,7 @@ sources:
  
     - name: snapshot_tables
       database: "{{('DI_SALES')}}"
-      schema: STAGING
+      schema: SNAPSHOT_SCHEMA
       tables:
         - name: snap_ordersdetails
 
