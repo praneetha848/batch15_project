@@ -40,8 +40,8 @@ models:
     # Applies to all files under models/example/
  
     staging: 
-      +schema: staging_schema
+      +schema: Staging_Schema
 
     confirmed:
-      +schema: confirmed_schema
+      +schema: Confirmed_Schema
         
