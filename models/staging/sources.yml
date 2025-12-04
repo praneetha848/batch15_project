@@ -1,0 +1,54 @@
+version: 2
+sources:
+    - name: snowflake_data
+      database: "{{('DI_SALES')}}"
+      schema: RAW_SCHEMA
+      tables:
+        - name: RAW_LINEITEM
+          columns:
+            - name: l_orderkey
+              tests:
+                - not_null
+            - name: l_quantity
+              tests:
+                - not_null
+            - name: l_linenumber
+              tests:
+                - not_null  
+        - name: RAW_NATION
+          columns:
+            - name: n_nationkey
+              tests:
+                - unique
+                - not_null
+            - name: n_name
+              tests:
+                - not_null
+        - name: RAW_ORDER
+          columns:
+            - name: o_orderkey
+              tests:
+               - unique
+               - not_null
+
+        - name: RAW_CUSTOMER 
+          columns:
+           - name: c_custkey
+             tests:
+              - unique
+              - not_null
+           - name: c_name
+             tests:
+               - not_null
+        - name: RAW_SUPPLIER
+        - name: RAW_PARTSUPP
+        - name: RAW_PART
+        - name : RAW_REGION
+        - name : RAW_CUSTOMER_NATION
+ 
+    - name: snapshot_tables
+      database: "{{('DI_SALES')}}"
+      schema: SNAPSHOT_SCHEMA
+      tables:
+        - name: snap_ordersdetails
+
